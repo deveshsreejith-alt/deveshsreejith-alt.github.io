@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1792787561|3749683';
+const CACHE_VERSION = '1792790288|3542385';
 /** @type {string} */
 const CACHE_PREFIX = 'Grind Life-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
