@@ -1,0 +1,17 @@
+name: decode-factory
+on:
+  push:
+    paths: ['b64f/done']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          cat $(ls b64f/part* | sort) | base64 -d > /tmp/f.tgz
+          rm -rf factory && tar xzf /tmp/f.tgz && touch .nojekyll
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add -A factory .nojekyll && git commit -m "decode factory" && git push
